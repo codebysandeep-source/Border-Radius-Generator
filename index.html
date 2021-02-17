@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANPAGE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="container">
+
+        <div class="header-top my-5"><b>BORDER-RADIUS GENERATOR</b></div>
+        <div class="row">
+            <div class="col-lg-6 my-5 order-lg-2">
+                <div class="output"><center><h3>Output:</h3>
+                <div id="output"></div></center></div>
+            </div>
+            <div class="col-lg-6 my-5 order-lg-1">
+                <div class="result"><center><h3>Result:</h3>
+                <input type="text" id="box" value="border-radius:0% 0% 0% 0%;"/><br/><br/>
+                <input type="range" min="0" max="100" value="0" id="slider1"/>
+                <input type="range" min="0" max="100" value="0" id="slider2"/>
+                <input type="range" min="0" max="100" value="0" id="slider3"/>
+                <input type="range" min="0" max="100" value="0" id="slider4"/></center></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 my-4" class="footer"><center>&copy;All Rights Reserved | Developed by SanPage</center></div>
+        </div>
+    </div>
+ 
+       
+      
+
+
+    <!-- JQuery for range -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+        $('#slider1,#slider2,#slider3,#slider4').on('input',function(){
+        var slider1 = $('#slider1').val(); 
+        var slider2 = $('#slider2').val(); 
+        var slider3 = $('#slider3').val(); 
+        var slider4 = $('#slider4').val(); 
+
+        $('#output').css('border-top-right-radius',slider1 + '%');
+        $('#output').css('border-top-left-radius',slider2 + '%');
+        $('#output').css('border-bottom-right-radius',slider3 + '%');
+        $('#output').css('border-bottom-left-radius',slider4 + '%');
+
+        $('#box').val('border-radius:'+slider1+'% '+slider2+'% '+slider3+'% '+slider4+'%;');
+
+        });
+        });
+    </script>
+    <!-- Disable to Inspect Element and View source code-->
+    <script type="text/javascript">
+    document.addEventListener("contextmenu",function(e){
+      e.preventDefault();
+    });
+    document.onkeydown = function(f){
+      if(event.keyCode == 123){
+        return false;
+      }
+      if(f.ctrlKey && f.shiftKey && f.keyCode == 'J'.charCodeAt(0) || 'I'.charCodeAt(0)){
+        return false;
+      }
+      if(f.ctrlKey && f.keyCode == 'U'.charCodeAt(0)){
+        return false;
+      }
+    }
+    </script>
+</body>
+</html>
