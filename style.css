@@ -6,6 +6,9 @@ body{
 ::selection {
     background: #00bd61;
   }
+.header-top,h3,.footer{
+  user-select: none;
+}
 .header-top{
     text-align:center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
